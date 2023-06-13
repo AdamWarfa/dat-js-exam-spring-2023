@@ -29,7 +29,7 @@ function displayTicket(ticket) {
     "beforeend",
     /*HTML*/ `
     
-                    <article>
+                <article>
                     <h3>${ticket.eventName}</h3>
                     <p class="ticketid">id: ${ticket.id}</p>
                     <button>likes: ${ticket.counter}</button></button>

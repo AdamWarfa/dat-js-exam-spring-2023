@@ -2,8 +2,12 @@
 import { events } from "./data.js";
 window.addEventListener("load", initApp);
 
+const currentDate = new Date();
+
 function initApp() {
   document.querySelector("#create-event-form").addEventListener("submit", createEvent);
+
+  console.log(currentDate);
 }
 
 function createEvent(event) {
@@ -19,10 +23,14 @@ function createEvent(event) {
     date,
   };
   events.push(newEvent);
-  filterList(events);
+  // filterList(events);
+  console.log(date);
+
+  let isFuture = date > currentDate;
+  console.log(isFuture);
 }
 
-function filterList(events) {
-  const filteredEvents = events.filter((a) => a.date.getMonth() === 5);
-  console.log(filteredEvents);
-}
+// function filterList(events) {
+// const filteredEvents = events.filter((a) => a.date.getMonth() === 5);
+//   console.log(filteredEvents);
+// }

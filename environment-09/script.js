@@ -34,3 +34,18 @@ function displayPosts() {
     );
   }
 }
+
+function sortPosts() {
+  let option = document.querySelector("#sortorder").value;
+  if (option === "ascending") {
+    posts.sort(sortByLikes);
+    displayPosts();
+  } else if (option === "descending") {
+    posts.sort(sortByLikes).reverse();
+    displayPosts();
+  }
+}
+
+function sortByLikes(a, b) {
+  return a.likes - b.likes;
+}
